@@ -1,3 +1,19 @@
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+
+  color: #242424;
+  background-color: rgba(255, 255, 255, 0.87);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
 h1,
 h2,
 h3,
@@ -25,6 +41,9 @@ a {
 
 button {
   cursor: pointer;
+  height: 32px;
+  width: 120px;
+  border-radius: 4px;
   background-color: blue;
   color: aliceblue;
 }
@@ -33,4 +52,26 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+.flatpickr-input{
+  margin-top: 24px;
+  height: 32px;
+}
+.timer{
+  display: flex;
+  margin-top: 24px;
+ 
+}
+.field{ 
+  display: inline-flex;
+  flex-direction: column;
+  margin-right: 8px;
+  align-items: center;
+}
+.value{
+font-size: 36px;
+}
+fieldset{
+  width: 15%;
+  margin-bottom: 8px;
 }

@@ -51,10 +51,127 @@
 //     )
 //     .join('');
 // }
+// ===================================================
 
-const date = new Date('2024-02-02 17:08:21');
+// import flatpickr from 'flatpickr';
+// import 'flatpickr/dist/flatpickr.min.css';
+// import iziToast from 'izitoast';
+// import 'izitoast/dist/css/iziToast.min.css';
 
-date.setMonth(3);
-console.log(date);
-date.setMinutes(15);
-console.log(date);
+// let userSelectedDate;
+// let currentTime;
+
+// const inputRef = document.querySelector('#datetime-picker');
+// const startRef = document.querySelector('[data-start]');
+// const daysRef = document.querySelector('[data-days]');
+// const hoursRef = document.querySelector('[data-hours]');
+// const minsRef = document.querySelector('[data-minutes]');
+// const secsRef = document.querySelector('[data-seconds]');
+
+// startRef.setAttribute('disabled', true);
+// startRef.addEventListener('click', onStart);
+
+// const options = {
+//   enableTime: true,
+//   time_24hr: true,
+//   defaultDate: new Date(),
+//   minuteIncrement: 1,
+//   onClose(selectedDates) {
+//     const startTime = Date.now();
+//     userSelectedDate = selectedDates[0];
+
+//     if (startTime > userSelectedDate) {
+//       startRef.setAttribute('disabled', true);
+//       iziToast.error({
+//         message: `Please choose a date in the future`,
+//         position: 'bottomLeft',
+//       });
+//     }
+
+//     if (startTime < userSelectedDate) {
+//       startRef.removeAttribute('disabled');
+//     }
+
+//     currentTime = new Date(userSelectedDate);
+//   },
+// };
+
+// flatpickr(inputRef, options);
+
+// function onStart() {
+//   inputRef.setAttribute('disabled', true);
+//   const timerId = setInterval(() => {
+//     const goTime = Date.now();
+//     const time = currentTime - goTime;
+//     const faceTime = convertMs(time);
+
+//     daysRef.textContent = faceTime.days;
+//     hoursRef.textContent = faceTime.hours;
+//     minsRef.textContent = faceTime.minutes;
+//     secsRef.textContent = faceTime.seconds;
+
+//     if (time < 1000) {
+//       clearInterval(timerId);
+//     }
+//   }, 1000);
+// }
+
+// function addLeadingZero(value) {
+//   return String(value).padStart(2, '0');
+// }
+
+// function convertMs(ms) {
+//   const second = 1000;
+//   const minute = second * 60;
+//   const hour = minute * 60;
+//   const day = hour * 24;
+
+//   const days = addLeadingZero(Math.floor(ms / day));
+//   const hours = addLeadingZero(Math.floor((ms % day) / hour));
+//   const minutes = addLeadingZero(Math.floor(((ms % day) % hour) / minute));
+//   const seconds = addLeadingZero(
+//     Math.floor((((ms % day) % hour) % minute) / second)
+//   );
+
+//   return { days, hours, minutes, seconds };
+// }
+
+// import iziToast from 'izitoast';
+// import 'izitoast/dist/css/iziToast.min.css';
+
+// const formRef = document.querySelector('.form');
+
+// formRef.addEventListener('submit', onSubmit);
+
+// function onSubmit(ev) {
+//   ev.preventDefault();
+//   const input = ev.currentTarget.elements;
+//   let delay = Number(input.delay.value);
+//   let state = input.state.value;
+//   createPromise(delay)
+//     .then(() => {
+//       iziToast.success({
+//         message: `✅ Fulfilled promise in ${delay}ms`,
+//         position: 'bottomLeft',
+//       });
+//     })
+//     .catch(() => {
+//       iziToast.error({
+//         message: `❌ Rejected promise in ${delay} ms`,
+//         position: 'bottomLeft',
+//       });
+//     });
+//   formRef.reset();
+
+//   function createPromise() {
+//     return new Promise((res, rej) => {
+//       setTimeout(() => {
+//         if (state === 'fulfilled') {
+//           res();
+//         } else {
+//           rej();
+//         }
+//       }, delay);
+//     });
+//   }
+// }
